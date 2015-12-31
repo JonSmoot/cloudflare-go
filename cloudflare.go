@@ -124,7 +124,7 @@ func (config *Config) GetDNSRecordsSvc() *DNSRecordsSvc {
 }
 
 // Utility function for executing the required http command
-func (baseSvc *BaseSvc) Invoke(method string, urlStr string, body io.Reader) (response *http.Response, error error) {
+func (baseSvc *BaseSvc) Invoke(method string, urlStr string, body io.Reader) (response *http.Response, err error) {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: baseSvc.config.insecureSkipVerify},
 	}
